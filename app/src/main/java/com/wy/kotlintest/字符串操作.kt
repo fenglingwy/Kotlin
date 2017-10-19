@@ -6,6 +6,7 @@ package com.wy.kotlintest
 fun main(args: Array<String>) {
     var str = "Hello World!!!"
     var str1 = "0123456789"
+    var Str2 = "123abc456"
 
 
     println(str.replace("hello","你好", true))       //替换  replace
@@ -15,5 +16,11 @@ fun main(args: Array<String>) {
     println(str1.sumBy {it.toInt()-'0'.toInt()})    //求和
 
     //正则
-    println(str.matches(regex = Regex(".+")))
+    var r1:Regex = Regex("123")
+    var r2:Regex = "111".toRegex()
+    println(str.matches( Regex(".+")))
+
+    r1.matches("123")
+
+
 }

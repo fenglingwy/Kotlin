@@ -13,6 +13,8 @@ fun main(args: Array<String>) {
      * Int	    32
      * Short	16
      * Byte	    8
+     *
+     * 各类型不能像Java自动转换，需调to...()方法
      */
     var byte:Byte = 100
     var float:Float = byte.toFloat()

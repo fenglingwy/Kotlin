@@ -44,12 +44,5 @@ fun main(args: Array<String>) {
     if (product != null) {
         product.print()
     }
-    product = factory.createProduct("B")
-    if (product != null) {
-        product.print()
-    }
-    product = factory.createProduct("C")
-    if (product != null) {
-        product.print()
-    }
+
 }

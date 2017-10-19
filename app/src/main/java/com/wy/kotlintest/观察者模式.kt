@@ -10,12 +10,12 @@ import kotlin.properties.Delegates
 /**
  * 被观察者接口
  */
-interface Subject {
+interface ISubject {
     //注册观察者
-    fun registerObserver(observer: Observe)
+    fun registerObserver(observer: IObserve)
 
     //移除观察者
-    fun removeObserver(observer: Observe)
+    fun removeObserver(observer: IObserve)
 
     //通知观察者
     fun notifyObservers()
@@ -24,21 +24,21 @@ interface Subject {
 /**
  * 观察者接口
  */
-interface Observe {
+interface IObserve {
     fun update()
 }
 
 /**
  * 被观察者实现类
  */
-internal class SubjectImpl : Subject {
-    var list: MutableList<Observe> = ArrayList()
+internal class SubjectImpl : ISubject {
+    var list: MutableList<IObserve> = ArrayList()
 
-    override fun registerObserver(observer: Observe) {
+    override fun registerObserver(observer: IObserve) {
         list.add(observer)
     }
 
-    override fun removeObserver(observer: Observe) {
+    override fun removeObserver(observer: IObserve) {
         list.remove(observer)
     }
 
@@ -52,12 +52,12 @@ internal class SubjectImpl : Subject {
 fun main(args: Array<String>) {
 
     val sub = SubjectImpl()
-    sub.registerObserver(object : Observe {
+    sub.registerObserver(object : IObserve {
         override fun update() {
             println("Observer01 ---> update")
         }
     })
-    sub.registerObserver(object : Observe {
+    sub.registerObserver(object : IObserve {
         override fun update() {
             println("Observer02 ---> update")
         }

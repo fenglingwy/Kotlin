@@ -4,18 +4,18 @@ package com.wy.kotlintest
  * Created by Administrator on 2017/10/17 0017.
  */
 
-interface Image{
+interface IImage {
     var name:String
     fun display()
 }
 
-class RealImage(override var name: String) :Image{
+class RealImage(override var name: String) : IImage {
     override fun display() {
         println("RealImage-->$name")
     }
 }
 
-class proxyImage(var image : Image) :Image by image{
+class proxyImage(var image : IImage) : IImage by image{
     override fun display() {
         println("RealImage-->前")
         image.display()

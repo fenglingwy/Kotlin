@@ -6,9 +6,6 @@ package com.wy.kotlintest
 interface Animal {
     var name: String
 
-    val type: String
-        get() = "属"
-
     fun run() {
         println("run --> $name")
     }

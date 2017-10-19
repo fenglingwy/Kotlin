@@ -27,26 +27,25 @@ fun main(args: Array<String>) {
     }
 
     //for
-    //未实现iterator
-    var array = arrayOf(1,2,3,4)
+    var array = arrayOf(1, 2, 3, 4)
     for (i in array.indices) {
-        print(array[i])
-    }
-    for ((index, value) in array.withIndex()) {
-        println("the element at $index is $value")
+        println(array[i])
     }
 
-    //实现iterator
-    val map = mapOf("name" to "姓名","age" to "年龄")
-    for (item in map){
-        println(item)
+    //downTo
+    for (i in 10 downTo 1 step 2) {
+        println("downTo-->" + i)
+    }
+
+    for (i in 1 until 10) {
+        println("until-->" + i)
     }
 
     //break
     loop@ for (i in 1..100) {
         for (j in 1..100) {
             if (j == 2) break@loop
-            println("break"+j)
+            println("break-->" + j)
         }
     }
 
@@ -57,8 +56,8 @@ fun main(args: Array<String>) {
 }
 
 fun foo() {
-    var array = arrayOf(0,1,2,3,4)
-    array.forEach it@{
+    var array = arrayOf(0, 1, 2, 3, 4)
+    array.forEach it@ {
         if (it == 1) return@it
         print(it)
     }
